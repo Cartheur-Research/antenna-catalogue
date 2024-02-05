@@ -1,0 +1,318 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<title>Azimuthal Induction Currents, Vector Potential.mph</title>
+<STYLE TYPE="text/css">
+P { font-family:helvetica }
+H1 { font-family:helvetica;font-size:large;color:darkred }
+H2 { font-family:helvetica;font-size:large;color:darkblue }
+H3 { font-family:helvetica;color:black }
+H4 { font-family:helvetica;color:black }
+BODY { background:white }
+TABLE { border-collapse: collapse;border=solid;border-width=medium }
+TD { padding-left:4px;padding-right:2px;font-family:helvetica;border=solid;border-width=1px }
+LI { font-family:helvetica }
+</STYLE>
+<meta name="description" content="FEMLAB report">
+<meta name="keywords" content="pde femlab fem fea multiphysics comsol">
+</head>
+<body>
+<a href="http://www.comsol.com"><img src="Azimuthal Induction Currents, Vector Potential_rep/Comsol_model_report.png" alt="COMSOL Multiphysics - Multiphysics Modeling" border=0></a>
+<p><font face="Helvetica" size="+2">COMSOL Model Report</font></p>
+<a href="#post"><img src="Azimuthal Induction Currents, Vector Potential_rep/post.png" alt="Go to the postprocessing section" border=0></a>
+<H1><a name="toc">1. Table of Contents</a></H1>
+<ul><li>Title - COMSOL Model Report<li>Table of Contents<li>Model Properties<li>Constants<li>Geometry<li>Geom1<li>Solver Settings<li>Postprocessing<li>Variables</ul>
+<H1><a name="modelprop">2. Model Properties</a></H1>
+<table border="1">
+<tr valign=top><td><b>Property</b></td><td><b>Value</b></td></tr>
+<tr valign=top><td>Model name</td><td>&nbsp;</td></tr>
+<tr valign=top><td>Author</td><td>&nbsp;</td></tr>
+<tr valign=top><td>Company</td><td>&nbsp;</td></tr>
+<tr valign=top><td>Department</td><td>&nbsp;</td></tr>
+<tr valign=top><td>Reference</td><td>&nbsp;</td></tr>
+<tr valign=top><td>URL</td><td>&nbsp;</td></tr>
+<tr valign=top><td>Saved date</td><td>Jul 3, 2007 12:53:29 PM</td></tr>
+<tr valign=top><td>Creation date</td><td>Jul 3, 2007 12:14:52 PM</td></tr>
+<tr valign=top><td>COMSOL version</td><td>COMSOL 3.3.0.405</td></tr>
+</table><p>
+
+<p>File name: M:\comsol work\tutorials\Azimuthal Induction Currents, Vector Potential.mph</p>
+<p>Application modes and modules used in this model:</p>
+<ul><li>Geom1 (Axial symmetry (2D))<ul><li>Azimuthal Induction Currents, Vector Potential (AC/DC Module)</ul></ul>
+<H1><a name="const">3. Constants</a></H1>
+<table border="1">
+<tr valign=top><td><b>Name</b></td><td><b>Expression</b></td><td><b>Value</b></td><td><b>Description</b></td></tr>
+<tr valign=top><td>sigCoil</td><td>3.7e7</td><td>3.7e7</td><td>&nbsp;</td></tr>
+<tr valign=top><td>sigCyl</td><td>3.7e7</td><td>3.7e7</td><td>&nbsp;</td></tr>
+<tr valign=top><td>I0</td><td>1e3</td><td>1000</td><td>&nbsp;</td></tr>
+<tr valign=top><td>diam</td><td>0.02</td><td>0.02</td><td>&nbsp;</td></tr>
+<tr valign=top><td>circ</td><td>pi*diam</td><td>0.062832</td><td>&nbsp;</td></tr>
+<tr valign=top><td>area</td><td>pi*(diam/2)^2</td><td>3.141593e-4</td><td>&nbsp;</td></tr>
+<tr valign=top><td>J0</td><td>I0/area</td><td>3.183099e6</td><td>&nbsp;</td></tr>
+<tr valign=top><td>Js0</td><td>I0/circ</td><td>15915.494309</td><td>&nbsp;</td></tr>
+</table><p>
+
+<H1><a name="geometry">4. Geometry</a></H1>
+<p>Number of geometries: 1</p>
+<H2><a name="geometry_section0">4.1. Geom1</a></H2>
+<img src="Azimuthal Induction Currents, Vector Potential_rep/geometry_section0.png" alt="geometry_section0">
+<H3><a name="geometry_section0_0">4.1.1. Point mode</a></H3>
+<img src="Azimuthal Induction Currents, Vector Potential_rep/geometry_section0_0_img.png" alt="geometry_section0_0_img">
+<H3><a name="geometry_section0_1">4.1.2. Boundary mode</a></H3>
+<img src="Azimuthal Induction Currents, Vector Potential_rep/geometry_section0_1_img.png" alt="geometry_section0_1_img">
+<H3><a name="geometry_section0_2">4.1.3. Subdomain mode</a></H3>
+<img src="Azimuthal Induction Currents, Vector Potential_rep/geometry_section0_2_img.png" alt="geometry_section0_2_img">
+<H1><a name="model_Geom1">5. Geom1</a></H1>
+<p>Space dimensions: Axial symmetry (2D)</p>
+<p>Independent variables: r, phi, z</p>
+<H2><a name="mesh">5.1. Mesh</a></H2>
+<H3><a name="mesh_stats">5.1.1. Mesh Statistics</a></H3>
+<table border="1">
+<tr valign=top><td>Number of degrees of freedom</td><td>9759</td></tr>
+<tr valign=top><td>Number of mesh points</td><td>2466</td></tr>
+<tr valign=top><td>Number of elements</td><td>4828</td></tr>
+<tr valign=top><td>Triangular</td><td>4828</td></tr>
+<tr valign=top><td>Quadrilateral</td><td>0</td></tr>
+<tr valign=top><td>Number of boundary elements</td><td>194</td></tr>
+<tr valign=top><td>Number of vertex elements</td><td>12</td></tr>
+<tr valign=top><td>Minimum element quality</td><td>0.71</td></tr>
+<tr valign=top><td>Element area ratio</td><td>0.002</td></tr>
+</table><p>
+
+<img src="Azimuthal Induction Currents, Vector Potential_rep/mesh_section_0_0.png" alt="mesh_section_0_0">
+<H2><a name="appmode_emqa">5.2. Application Mode: Azimuthal Induction Currents, Vector Potential (emqa)</a></H2>
+<p>Application mode type: Azimuthal Induction Currents, Vector Potential (AC/DC Module)</p>
+<p>Application mode name: emqa</p>
+<H3><a name="appmode_emqa_scalarvariables">5.2.1. Scalar Variables</a></H3>
+<table border="1">
+<tr valign=top><td>Name</td><td>Variable</td><td>Value</td><td>Description</td></tr>
+<tr valign=top><td>epsilon0</td><td>epsilon0_emqa</td><td>8.854187817e-12</td><td>Permittivity of vacuum</td></tr>
+<tr valign=top><td>mu0</td><td>mu0_emqa</td><td>4*pi*1e-7</td><td>Permeability of vacuum</td></tr>
+<tr valign=top><td>nu</td><td>nu_emqa</td><td>100</td><td>Frequency</td></tr>
+</table><p>
+
+<H3><a name="properties_emqa">5.2.2. Application Mode Properties</a></H3>
+<table border="1">
+<tr valign=top><td><b>Property</b></td><td><b>Value</b></td></tr>
+<tr valign=top><td>Default element type</td><td>Lagrange - Quadratic</td></tr>
+<tr valign=top><td>Analysis type</td><td>Time-harmonic</td></tr>
+<tr valign=top><td>Weak constraints</td><td>Off</td></tr>
+<tr valign=top><td>Frame</td><td>Frame (ref)</td></tr>
+</table><p>
+
+<H3><a name="appmode_emqa_variables">5.2.3. Variables</a></H3>
+<p>Dependent variables: Aphidr</p>
+<p>Shape functions: shlag(2,'Aphidr')</p>
+<p>Interior boundaries active</p>
+<H3><a name="Boundary_settings_emqa">5.2.4. Boundary Settings</a></H3>
+<table border="1">
+<tr valign=top><td>Boundary</td><td>&nbsp;</td><td>2, 7, 9</td><td>4, 6, 8, 11-12</td></tr>
+<tr valign=top><td>Type</td><td>&nbsp;</td><td>Magnetic insulation</td><td>Continuity</td></tr>
+<tr valign=top><td>Surface current density (Js0phi)</td><td>A/m</td><td>0</td><td>0</td></tr>
+</table><p>
+
+<table border="1">
+<tr valign=top><td>Boundary</td><td>1, 3, 5</td><td>10, 13</td></tr>
+<tr valign=top><td>Type</td><td>Axial symmetry</td><td>Continuity</td></tr>
+<tr valign=top><td>Surface current density (Js0phi)</td><td>0</td><td><b>Js0</b></td></tr>
+</table><p>
+
+<H3><a name="subdomain_settings_emqa">5.2.5. Subdomain Settings</a></H3>
+<table border="1">
+<tr valign=top><td>Subdomain</td><td>&nbsp;</td><td>1</td><td>2</td></tr>
+<tr valign=top><td>Shape functions (shape)</td><td>&nbsp;</td><td><b>shlag(2,'Aphidr')</b></td><td><b>shlag(2,'Aphidr')</b></td></tr>
+<tr valign=top><td>Integration order (gporder)</td><td>&nbsp;</td><td><b>4</b></td><td><b>4</b></td></tr>
+<tr valign=top><td>Constraint order (cporder)</td><td>&nbsp;</td><td><b>2</b></td><td><b>2</b></td></tr>
+<tr valign=top><td>Electrical conductivity (sigma)</td><td>S/m</td><td>0</td><td><b>sigCyl</b></td></tr>
+<tr valign=top><td>External current density (Jephi)</td><td>A/m<sup>2</sup></td><td>0</td><td>0</td></tr>
+</table><p>
+
+<table border="1">
+<tr valign=top><td>Subdomain</td><td>3</td></tr>
+<tr valign=top><td>Shape functions (shape)</td><td><b>shlag(2,'Aphidr')</b></td></tr>
+<tr valign=top><td>Integration order (gporder)</td><td><b>4</b></td></tr>
+<tr valign=top><td>Constraint order (cporder)</td><td><b>2</b></td></tr>
+<tr valign=top><td>Electrical conductivity (sigma)</td><td><b>sigCoil</b></td></tr>
+<tr valign=top><td>External current density (Jephi)</td><td><b>J0</b></td></tr>
+</table><p>
+
+<H1><a name="solver">6. Solver Settings</a></H1>
+<p>Solve using a script: off</p>
+<table border="1">
+<tr valign=top><td>Analysis type</td><td>Time-harmonic</td></tr>
+<tr valign=top><td>Auto select solver</td><td>On</td></tr>
+<tr valign=top><td>Solver</td><td>Stationary</td></tr>
+<tr valign=top><td>Solution form</td><td>Automatic</td></tr>
+<tr valign=top><td>Symmetric</td><td>auto</td></tr>
+<tr valign=top><td>Adaption</td><td>Off</td></tr>
+</table><p>
+
+<H2><a name="solver_name">6.1. Direct (UMFPACK)</a></H2>
+<p>Solver type: Linear system solver</p>
+<table border="1">
+<tr valign=top><td><b>Parameter</b></td><td><b>Value</b></td></tr>
+<tr valign=top><td>Pivot threshold</td><td>0.1</td></tr>
+<tr valign=top><td>Memory allocation factor</td><td>0.7</td></tr>
+</table><p>
+
+<H2><a name="solver_advanced">6.2. Advanced</a></H2>
+<table border="1">
+<tr valign=top><td><b>Parameter</b></td><td><b>Value</b></td></tr>
+<tr valign=top><td>Constraint handling method</td><td>Elimination</td></tr>
+<tr valign=top><td>Null-space function</td><td>Automatic</td></tr>
+<tr valign=top><td>Assembly block size</td><td>5000</td></tr>
+<tr valign=top><td>Use Hermitian transpose of constraint matrix and in symmetry detection</td><td>Off</td></tr>
+<tr valign=top><td>Use complex functions with real input</td><td>Off</td></tr>
+<tr valign=top><td>Stop if error due to undefined operation</td><td>On</td></tr>
+<tr valign=top><td>Type of scaling</td><td>Automatic</td></tr>
+<tr valign=top><td>Manual scaling</td><td>&nbsp;</td></tr>
+<tr valign=top><td>Row equilibration</td><td>On</td></tr>
+<tr valign=top><td>Manual control of reassembly</td><td>Off</td></tr>
+<tr valign=top><td>Load constant</td><td>On</td></tr>
+<tr valign=top><td>Constraint constant</td><td>On</td></tr>
+<tr valign=top><td>Mass constant</td><td>On</td></tr>
+<tr valign=top><td>Damping (mass) constant</td><td>On</td></tr>
+<tr valign=top><td>Jacobian constant</td><td>On</td></tr>
+<tr valign=top><td>Constraint Jacobian constant</td><td>On</td></tr>
+</table><p>
+
+<H1><a name="post">7. Postprocessing</a></H1>
+<img src="Azimuthal Induction Currents, Vector Potential_rep/post_0.png" alt="post_0">
+<H1><a name="variables">8. Variables</a></H1>
+<H2><a name="variables_1">8.1. Boundary</a></H2>
+<table border="1">
+<tr valign=top><td><b>Name</b></td><td><b>Description</b></td><td><b>Expression</b></td></tr>
+<tr valign=top><td>dVolbnd_emqa</td><td>Volume integration contribution</td><td>1</td></tr>
+<tr valign=top><td>Jsphi_emqa</td><td>Surface current density</td><td>-unr * (Hz_emqa_down-Hz_emqa_up)+unz * (Hr_emqa_down-Hr_emqa_up)</td></tr>
+<tr valign=top><td>Qsav_emqa</td><td>Surface resistive heating, time average</td><td>0.5 * real(Jsphi_emqa * conj(Ephi_emqa))</td></tr>
+<tr valign=top><td>nPoav_emqa</td><td>Power outflow, time average</td><td>nr_emqa * Porav_emqa+nz_emqa * Pozav_emqa</td></tr>
+<tr valign=top><td>unTrav_emqa</td><td>Maxwell surface stress tensor, time average, r component</td><td>real(-0.25 * (Br_emqa_up * conj(Hr_emqa_up)+Bz_emqa_up * conj(Hz_emqa_up)) * dnr+0.5 * (dnr * Hr_emqa_up+dnz * Hz_emqa_up) * conj(Br_emqa_up))</td></tr>
+<tr valign=top><td>dnTrav_emqa</td><td>Maxwell surface stress tensor, time average, r component</td><td>real(-0.25 * (Br_emqa_down * conj(Hr_emqa_down)+Bz_emqa_down * conj(Hz_emqa_down)) * unr+0.5 * (unr * Hr_emqa_down+unz * Hz_emqa_down) * conj(Br_emqa_down))</td></tr>
+<tr valign=top><td>unTzav_emqa</td><td>Maxwell surface stress tensor, time average, z component</td><td>real(-0.25 * (Br_emqa_up * conj(Hr_emqa_up)+Bz_emqa_up * conj(Hz_emqa_up)) * dnz+0.5 * (dnr * Hr_emqa_up+dnz * Hz_emqa_up) * conj(Bz_emqa_up))</td></tr>
+<tr valign=top><td>dnTzav_emqa</td><td>Maxwell surface stress tensor, time average, z component</td><td>real(-0.25 * (Br_emqa_down * conj(Hr_emqa_down)+Bz_emqa_down * conj(Hz_emqa_down)) * unz+0.5 * (unr * Hr_emqa_down+unz * Hz_emqa_down) * conj(Bz_emqa_down))</td></tr>
+</table><p>
+
+<H2><a name="variables_2">8.2. Subdomain</a></H2>
+<H3><a name="variables_2_0">8.2.1. Subdomain 1</a></H3>
+<table border="1">
+<tr valign=top><td><b>Name</b></td><td><b>Description</b></td><td><b>Expression</b></td></tr>
+<tr valign=top><td>SR_emqa</td><td>Infinite element radial coordinate</td><td>&nbsp;</td></tr>
+<tr valign=top><td>Sr_emqa</td><td>Infinite element r coordinate</td><td>r</td></tr>
+<tr valign=top><td>S0r_guess_emqa</td><td>Inner r coordinate default guess   </td><td>0</td></tr>
+<tr valign=top><td>Sdr_guess_emqa</td><td>Width in r direction default guess </td><td>0</td></tr>
+<tr valign=top><td>rCylr_emqa</td><td>Infinite element r cylindrical vector, r component</td><td>&nbsp;</td></tr>
+<tr valign=top><td>Sz_emqa</td><td>Infinite element z coordinate</td><td>z</td></tr>
+<tr valign=top><td>S0z_guess_emqa</td><td>Inner z coordinate default guess   </td><td>0</td></tr>
+<tr valign=top><td>Sdz_guess_emqa</td><td>Width in z direction default guess </td><td>0</td></tr>
+<tr valign=top><td>rCylz_emqa</td><td>Infinite element r cylindrical vector, z component</td><td>&nbsp;</td></tr>
+<tr valign=top><td>detJ_emqa</td><td>Infinite element transformation matrix determinant </td><td>1</td></tr>
+<tr valign=top><td>Jrr_emqa</td><td>Infinite element transformation matrix determinant, element rr </td><td>1</td></tr>
+<tr valign=top><td>invJrr_emqa</td><td>Infinite element inverse transformation matrix, element rr </td><td>1</td></tr>
+<tr valign=top><td>Jrz_emqa</td><td>Infinite element transformation matrix determinant, element rz </td><td>0</td></tr>
+<tr valign=top><td>invJrz_emqa</td><td>Infinite element inverse transformation matrix, element rz </td><td>0</td></tr>
+<tr valign=top><td>Jzr_emqa</td><td>Infinite element transformation matrix determinant, element zr </td><td>0</td></tr>
+<tr valign=top><td>invJzr_emqa</td><td>Infinite element inverse transformation matrix, element zr </td><td>0</td></tr>
+<tr valign=top><td>Jzz_emqa</td><td>Infinite element transformation matrix determinant, element zz </td><td>1</td></tr>
+<tr valign=top><td>invJzz_emqa</td><td>Infinite element inverse transformation matrix, element zz </td><td>1</td></tr>
+<tr valign=top><td>delta_emqa</td><td>Skin depth</td><td>1/(omega_emqa * sqrt(0.5 * mu0_emqa * mur_emqa * epsilon0_emqa * epsilonr_emqa * (-1+sqrt(1+(sigma_emqa/(omega_emqa * epsilon0_emqa * epsilonr_emqa))^2))))</td></tr>
+<tr valign=top><td>dVol_emqa</td><td>Volume integration contribution</td><td>detJ_emqa</td></tr>
+<tr valign=top><td>Aphi_emqa</td><td>Magnetic potential, phi component</td><td>r * Aphidr</td></tr>
+<tr valign=top><td>Aphir_emqa</td><td>Magnetic potential, r derivative of phi component</td><td>r * Aphidrr+Aphidr</td></tr>
+<tr valign=top><td>Aphiz_emqa</td><td>Magnetic potential, z derivative of phi component</td><td>r * Aphidrz</td></tr>
+<tr valign=top><td>curlAr_emqa</td><td>Curl of magnetic potential, r component</td><td>-Aphidrz</td></tr>
+<tr valign=top><td>curlAz_emqa</td><td>Curl of magnetic potential, z component</td><td>Aphidrr</td></tr>
+<tr valign=top><td>depAphi_emqa</td><td>Magnetic potential test variable, phi component</td><td>Aphidr</td></tr>
+<tr valign=top><td>Dphi_emqa</td><td>Electric displacement, phi component</td><td>epsilon_emqa * Ephi_emqa</td></tr>
+<tr valign=top><td>epsilon_emqa</td><td>Permittivity</td><td>epsilon0_emqa * epsilonr_emqa</td></tr>
+<tr valign=top><td>Br_emqa</td><td>Magnetic flux density, r component</td><td>-diff(Aphi_emqa,z)</td></tr>
+<tr valign=top><td>Bz_emqa</td><td>Magnetic flux density, z component</td><td>Aphidr+diff(Aphi_emqa,r)</td></tr>
+<tr valign=top><td>Hr_emqa</td><td>Magnetic field, r component</td><td>Br_emqa/(mur_emqa * mu0_emqa)</td></tr>
+<tr valign=top><td>Hz_emqa</td><td>Magnetic field, z component</td><td>Bz_emqa/(mur_emqa * mu0_emqa)</td></tr>
+<tr valign=top><td>mu_emqa</td><td>Permeability</td><td>mu0_emqa * mur_emqa</td></tr>
+<tr valign=top><td>murr_emqa</td><td>Permeability, rr component</td><td>mu0_emqa * murrr_emqa</td></tr>
+<tr valign=top><td>murz_emqa</td><td>Permeability, rz component</td><td>mu0_emqa * murrz_emqa</td></tr>
+<tr valign=top><td>muzr_emqa</td><td>Permeability, zr component</td><td>mu0_emqa * murzr_emqa</td></tr>
+<tr valign=top><td>muzz_emqa</td><td>Permeability, zz component</td><td>mu0_emqa * murzz_emqa</td></tr>
+<tr valign=top><td>Jpphi_emqa</td><td>Potential current density, phi component</td><td>0</td></tr>
+<tr valign=top><td>normE_emqa</td><td>Electric field, norm</td><td>abs(Ephi_emqa)</td></tr>
+<tr valign=top><td>Jiphi_emqa</td><td>Induced current density, phi component</td><td>sigma_emqa * Ephi_emqa</td></tr>
+<tr valign=top><td>Ephi_emqa</td><td>Electric field, phi component</td><td>-j * omega_emqa * Aphi_emqa</td></tr>
+<tr valign=top><td>normD_emqa</td><td>Electric displacement, norm</td><td>abs(Dphi_emqa)</td></tr>
+<tr valign=top><td>Jdphi_emqa</td><td>Displacement current density, phi component</td><td>j * omega_emqa * Dphi_emqa</td></tr>
+<tr valign=top><td>Jphi_emqa</td><td>Total current density, phi component</td><td>Jpphi_emqa+Jiphi_emqa+Jdphi_emqa+Jvphi_emqa+Jephi_emqa</td></tr>
+<tr valign=top><td>Weav_emqa</td><td>Electric energy density, time average</td><td>0.25 * real(Ephi_emqa * conj(Dphi_emqa))</td></tr>
+<tr valign=top><td>Wav_emqa</td><td>Total energy density, time average</td><td>Wmav_emqa+Weav_emqa</td></tr>
+<tr valign=top><td>Qav_emqa</td><td>Resistive heating, time average</td><td>0.5 * real(Jphi_emqa * (conj(Ephi_emqa)+conj(vz_emqa * Br_emqa-vr_emqa * Bz_emqa)+conj(0.5 * Vloop_emqa/(pi * r))))</td></tr>
+<tr valign=top><td>Porav_emqa</td><td>Power flow, time average, r component</td><td>0.5 * real(Ephi_emqa * conj(Hz_emqa))</td></tr>
+<tr valign=top><td>Pozav_emqa</td><td>Power flow, time average, z component</td><td>-0.5 * real(Ephi_emqa * conj(Hr_emqa))</td></tr>
+<tr valign=top><td>normJ_emqa</td><td>Total current density, norm</td><td>abs(Jphi_emqa)</td></tr>
+<tr valign=top><td>Jvphi_emqa</td><td>Velocity current density, phi component</td><td>sigma_emqa * (vz_emqa * Br_emqa-vr_emqa * Bz_emqa)</td></tr>
+<tr valign=top><td>normM_emqa</td><td>Magnetization, norm</td><td>sqrt(abs(Mr_emqa)^2+abs(Mz_emqa)^2)</td></tr>
+<tr valign=top><td>normBr_emqa</td><td>Remanent flux density, norm</td><td>sqrt(abs(Brr_emqa)^2+abs(Brz_emqa)^2)</td></tr>
+<tr valign=top><td>normH_emqa</td><td>Magnetic field, norm</td><td>sqrt(abs(Hr_emqa)^2+abs(Hz_emqa)^2)</td></tr>
+<tr valign=top><td>normB_emqa</td><td>Magnetic flux density, norm</td><td>sqrt(abs(Br_emqa)^2+abs(Bz_emqa)^2)</td></tr>
+<tr valign=top><td>normv_emqa</td><td>Velocity, norm</td><td>sqrt(abs(vr_emqa)^2+abs(vz_emqa)^2)</td></tr>
+<tr valign=top><td>normPoav_emqa</td><td>Power flow, time average, norm</td><td>sqrt(abs(Porav_emqa)^2+abs(Pozav_emqa)^2)</td></tr>
+<tr valign=top><td>Wmav_emqa</td><td>Magnetic energy density, time average</td><td>0.25 * real(Hr_emqa * conj(Br_emqa)+Hz_emqa * conj(Bz_emqa))</td></tr>
+</table><p>
+
+<H3><a name="variables_2_1">8.2.2. Subdomain 2-3</a></H3>
+<table border="1">
+<tr valign=top><td><b>Name</b></td><td><b>Description</b></td><td><b>Expression</b></td></tr>
+<tr valign=top><td>SR_emqa</td><td>Infinite element radial coordinate</td><td>&nbsp;</td></tr>
+<tr valign=top><td>Sr_emqa</td><td>Infinite element r coordinate</td><td>r</td></tr>
+<tr valign=top><td>S0r_guess_emqa</td><td>Inner r coordinate default guess   </td><td>0</td></tr>
+<tr valign=top><td>Sdr_guess_emqa</td><td>Width in r direction default guess </td><td>0</td></tr>
+<tr valign=top><td>rCylr_emqa</td><td>Infinite element r cylindrical vector, r component</td><td>&nbsp;</td></tr>
+<tr valign=top><td>Sz_emqa</td><td>Infinite element z coordinate</td><td>z</td></tr>
+<tr valign=top><td>S0z_guess_emqa</td><td>Inner z coordinate default guess   </td><td>0</td></tr>
+<tr valign=top><td>Sdz_guess_emqa</td><td>Width in z direction default guess </td><td>0</td></tr>
+<tr valign=top><td>rCylz_emqa</td><td>Infinite element r cylindrical vector, z component</td><td>&nbsp;</td></tr>
+<tr valign=top><td>detJ_emqa</td><td>Infinite element transformation matrix determinant </td><td>1</td></tr>
+<tr valign=top><td>Jrr_emqa</td><td>Infinite element transformation matrix determinant, element rr </td><td>1</td></tr>
+<tr valign=top><td>invJrr_emqa</td><td>Infinite element inverse transformation matrix, element rr </td><td>1</td></tr>
+<tr valign=top><td>Jrz_emqa</td><td>Infinite element transformation matrix determinant, element rz </td><td>0</td></tr>
+<tr valign=top><td>invJrz_emqa</td><td>Infinite element inverse transformation matrix, element rz </td><td>0</td></tr>
+<tr valign=top><td>Jzr_emqa</td><td>Infinite element transformation matrix determinant, element zr </td><td>0</td></tr>
+<tr valign=top><td>invJzr_emqa</td><td>Infinite element inverse transformation matrix, element zr </td><td>0</td></tr>
+<tr valign=top><td>Jzz_emqa</td><td>Infinite element transformation matrix determinant, element zz </td><td>1</td></tr>
+<tr valign=top><td>invJzz_emqa</td><td>Infinite element inverse transformation matrix, element zz </td><td>1</td></tr>
+<tr valign=top><td>delta_emqa</td><td>Skin depth</td><td>1/(omega_emqa * sqrt(0.5 * mu0_emqa * mur_emqa * epsilon0_emqa * epsilonr_emqa * (-1+sqrt(1+(sigma_emqa/(omega_emqa * epsilon0_emqa * epsilonr_emqa))^2))))</td></tr>
+<tr valign=top><td>dVol_emqa</td><td>Volume integration contribution</td><td>detJ_emqa</td></tr>
+<tr valign=top><td>Aphi_emqa</td><td>Magnetic potential, phi component</td><td>r * Aphidr</td></tr>
+<tr valign=top><td>Aphir_emqa</td><td>Magnetic potential, r derivative of phi component</td><td>r * Aphidrr+Aphidr</td></tr>
+<tr valign=top><td>Aphiz_emqa</td><td>Magnetic potential, z derivative of phi component</td><td>r * Aphidrz</td></tr>
+<tr valign=top><td>curlAr_emqa</td><td>Curl of magnetic potential, r component</td><td>-Aphidrz</td></tr>
+<tr valign=top><td>curlAz_emqa</td><td>Curl of magnetic potential, z component</td><td>Aphidrr</td></tr>
+<tr valign=top><td>depAphi_emqa</td><td>Magnetic potential test variable, phi component</td><td>Aphidr</td></tr>
+<tr valign=top><td>Dphi_emqa</td><td>Electric displacement, phi component</td><td>epsilon_emqa * Ephi_emqa</td></tr>
+<tr valign=top><td>epsilon_emqa</td><td>Permittivity</td><td>epsilon0_emqa * epsilonr_emqa</td></tr>
+<tr valign=top><td>Br_emqa</td><td>Magnetic flux density, r component</td><td>-diff(Aphi_emqa,z)</td></tr>
+<tr valign=top><td>Bz_emqa</td><td>Magnetic flux density, z component</td><td>Aphidr+diff(Aphi_emqa,r)</td></tr>
+<tr valign=top><td>Hr_emqa</td><td>Magnetic field, r component</td><td>Br_emqa/(mur_emqa * mu0_emqa)</td></tr>
+<tr valign=top><td>Hz_emqa</td><td>Magnetic field, z component</td><td>Bz_emqa/(mur_emqa * mu0_emqa)</td></tr>
+<tr valign=top><td>mu_emqa</td><td>Permeability</td><td>mu0_emqa * mur_emqa</td></tr>
+<tr valign=top><td>murr_emqa</td><td>Permeability, rr component</td><td>mu0_emqa * murrr_emqa</td></tr>
+<tr valign=top><td>murz_emqa</td><td>Permeability, rz component</td><td>mu0_emqa * murrz_emqa</td></tr>
+<tr valign=top><td>muzr_emqa</td><td>Permeability, zr component</td><td>mu0_emqa * murzr_emqa</td></tr>
+<tr valign=top><td>muzz_emqa</td><td>Permeability, zz component</td><td>mu0_emqa * murzz_emqa</td></tr>
+<tr valign=top><td>Jpphi_emqa</td><td>Potential current density, phi component</td><td>0</td></tr>
+<tr valign=top><td>normE_emqa</td><td>Electric field, norm</td><td>abs(Ephi_emqa)</td></tr>
+<tr valign=top><td>Jiphi_emqa</td><td>Induced current density, phi component</td><td>sigma_emqa * Ephi_emqa</td></tr>
+<tr valign=top><td>Ephi_emqa</td><td>Electric field, phi component</td><td>-j * omega_emqa * Aphi_emqa</td></tr>
+<tr valign=top><td>normD_emqa</td><td>Electric displacement, norm</td><td>abs(Dphi_emqa)</td></tr>
+<tr valign=top><td>Jdphi_emqa</td><td>Displacement current density, phi component</td><td>j * omega_emqa * Dphi_emqa</td></tr>
+<tr valign=top><td>Jphi_emqa</td><td>Total current density, phi component</td><td>Jpphi_emqa+Jiphi_emqa+Jdphi_emqa+Jvphi_emqa+Jephi_emqa</td></tr>
+<tr valign=top><td>Weav_emqa</td><td>Electric energy density, time average</td><td>0.25 * real(Ephi_emqa * conj(Dphi_emqa))</td></tr>
+<tr valign=top><td>Wav_emqa</td><td>Total energy density, time average</td><td>Wmav_emqa+Weavn™Pû"Ou•·;dHF3¯ö•ü®M0°ç†=Æ4“s´Œj4	»à¬ü∑YÈfµ≤#>#É˘B]Ö≠•ßµRo{uµœ"[º:#€º@Pñ1]©; )+ÇIQí5÷–È8S÷J4bPqÄ∏“SçOç°Oƒ	¯s∑Y»¿ôl`ù2‘¨õ8Ll)Ì°Ìz›@’,x2 I·:FÊÿ£=dö∆∆ÿÀ∞W®QôâÙ˘fÊù›füil"O„&‘‹‰ÕÍ°ÏÍ®°Á4Ù’+˛≥Ê≥µˇ£BÈÎ˝V§uGpìhèyüË8ﬂ…ˇMOé∞v#mÁÀº?W+v^¨õ¨ø;¡⁄TÅ(AjX°∂Yà¡™’¸øÇ,e2>?–øD∞`Aı@ñú¨Û‡§£UQZ±WUÊÕXl1 |_D±ËAä‡)`ãÏd1xSH!)xºxß•i¯_ÙS‚Q'–Aﬂ¢ÕW "\$X%è˛R™ˆsoÇê/Y3ﬂB–Kßû¬Œàπ£∞4v£©B∞PÅGv©„T-(;èyÊ?Dd&)£!Lœﬂ—È?Äê?ó	Âb\πÀf—ò˛¯
+ãã¬äá•ﬁ›ΩPÆsE‘ó`¿)ˇ.≥– ÷U	¿D~Æ8u⁄=–QRç˚‚•Qˇ*ÙÉ˛™˜ÅÖü·}Òª(8`XﬂZèjaÈzíM“
+¿“œ3uc˝œàø˙PQH°!—’≈ÕÂí¶RQ—›c°ü€á˛n·z^ä00RÊÅÑ⁄Ug
+I´ƒz§dü»W! ë3g”˘˚tàuàihõ;€≈Ú£"OE…å∑HÉ∂àR÷¬‘Î&l˙x≠3m‰,$ï≥)˙≈eû∂H8ú¢˙âƒiÏÎe/mÑ√u-Ï$g©ÑÈ˝c3à^óeÉ›¡¿ªΩJ¬s·OÊsDŒ\ø¯mÆN∞¨r√B•—ãÇœ…@¬%˙2hnΩßá/–VΩ=∞2≤r¨576sZ6ë#Bˆìà>å˝Í˙Œ†5ç2Ÿ-÷SÈ /<ˆ7XàòsW:#ß:ëéﬁs¢ŒÁ(?ÕÍmÖ?FB Çú¿v∞‡îCEÅ„÷µRºi\Òt‰ÌƒeÆ´éŸ„≈∞·îà
+o[DNÀIôÄ„°O$Át
+ã°n<∑ë&ëìaÄßó+›Œ$ç…TbàŸtÀVz3≠îj¯N÷'ªmG}$L rJ≥QúêC˘–ñ6à‚Àî6»∞æ˙J=ˇª≤5—Íâñ˚jf—üE v€Ù°`ç≤Ôˇ™2µ?
+D¬@ë0K ëÒ>£¥Ú°"n)7L€«˝ä`"*2q'÷´ı—Ω+l`$éö¨ùE\F.&
+xê≠WÁº=©†˜¿R∂D>T>R$`óG™∆C∆Åéâ^ä¬0˜ﬁﬂÒ-_f)Ú‡èZÑF!‡¶ê0>Öﬁ¯0††ºˆèì3»B$è‘â>î˘AÅ Ïb‚ÖVÅØ¬˙â \\?ﬂ´ÚÖ?Ûvèª??`¿yÉ ÃˇÉ
+./Ÿ0|Ö^©u´åaW°Oº¶{9U˚ÿ“ç=#YRø”ä—ä‰d¬ë‹ÁIøæÁÔT*¡‚ƒµ`ª˙ã”n•4|Gœ“2À ¥±Âóòˆ Q§Ù⁄ÑùÄ‡ï§Àçû¥ƒzTêÖ8Ω`∑Y◊':üÕf∞{öõFM≤–Õªå˜SΩ</I∞Í…"Eì∂+Oh∑‰C$˜XΩßŒq•è4√¢¶C≤..X/
+CjƒÏìMJÊF]do:æ;6¥L!2‡ß•j/∆…;Åbh∑QÊ⁄GDŒô˝^&∞Z#sgõô±êóöÖ/ºh0
+” DÓ≤ú\¶g—àS€˘uπ[hG}&nÒΩÖ4»;`@$)ÏàQﬁÒìÒ¶Ÿ¡B·€e¶xär1{´√ç6Fö/ù@‡ß•ã›&@ÃÕ√#m7hí5ºÂ∏ΩiŸâ∆•É@ß∂èik[Eú√:ufn#ÍÈÍ‰°PS“™W@◊ß¡É˚‚™é®ƒŒl`Ì4°òôïvÅÎmhŒÎÇü¨H’r˙Ô0£¸^~4tË‹À˙ªm6⁄Å^)∆{~ƒ—5ÿ˙QFkëñmΩ‹	#$¸<~?ˇΩóz“z©˙˚OÅ˘3‚çÓöœ™=“@<%*˝–`¡¢™;

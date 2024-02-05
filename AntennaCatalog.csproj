@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CAB2C10F-8439-4D0F-82B0-E93815356540}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AntennaCatalog</RootNamespace>
+    <AssemblyName>AntennaCatalog</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\MagneticFieldCalculator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MagneticFieldCalculator.Designer.cs">
+      <DependentUpon>MagneticFieldCalculator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\MagneticFieldCalculator.resx">
+      <DependentUpon>MagneticFieldCalculator.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="AntennaData\Experimental Apparatus.xlsx" />
+    <None Include="app.config" />
+    <None Include="Equipment\Hall effect probe\Three axis teslameter.pdf" />
+    <None Include="Materials\Electrical properties of Nb-TiO.pdf" />
+    <None Include="Models\comsol\help\1\Azimuthal Induction Currents, Vector Potential.mph" />
+    <None Include="Models\comsol\help\1\Azimuthal Induction Currents, Vector Potential_rep\FINDER.DAT" />
+    <None Include="Models\comsol\help\1\FINDER.DAT" />
+    <None Include="Models\comsol\help\2\FINDER.DAT" />
+    <None Include="Models\comsol\help\2\FloatingPotentials.mph" />
+    <None Include="Models\comsol\help\6\FINDER.DAT" />
+    <None Include="Models\comsol\help\6\InducedEddy%28Issue%29.mph" />
+    <None Include="Models\comsol\help\7\FINDER.DAT" />
+    <None Include="Models\comsol\help\7\HelmholtzCoils.mph" />
+    <None Include="Models\comsol\medical\Loop radiator 3D.mph" />
+    <None Include="Models\comsol\medical\Loop radiator.mph" />
+    <None Include="Models\comsol\Single loop to single loop.mph" />
+    <None Include="Models\comsol\Study of B field 1.mph" />
+    <None Include="Models\comsol\Study of B field 2.mph" />
+    <None Include="Models\comsol\Study of B field 3 azmuthal.mph" />
+    <None Include="Models\comsol\Study of B field 3.mph" />
+    <None Include="Models\comsol\Study of B field 4-no disc.mph" />
+    <None Include="Models\comsol\Study of B field 4.mph" />
+    <None Include="Models\Coupled p-s to coupled p-s.pptx" />
+    <None Include="Models\firstproof\Velocity-Inhibition.mph" />
+    <None Include="Models\medical\How to Get CE Mark Certification for Medical Devices Sold in Europe %28High%29.flv" />
+    <None Include="Models\poweratadistance\Power at a Distance Descriptor.doc" />
+    <None Include="Models\Single loop energized solenoid to solenoid under load.pptx" />
+    <None Include="Models\Single loop energized solenoid.pptx" />
+    <None Include="Models\Single loop to single loop.pptx" />
+    <None Include="Models\Single loop with accretion disc to single loop with accretion disc.pptx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CircuitCalculator\CircuitCalculator.csproj">
+      <Project>{435EFB62-470B-4BF4-8448-1A347A4D7C5B}</Project>
+      <Name>CircuitCalculator</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Concepts\images\air_solenoid.gif" />
+    <Content Include="Concepts\images\circular_loop.gif" />
+    <Content Include="Concepts\images\geometryCircularLoop.png" />
+    <Content Include="Concepts\images\H_circularLoop.png" />
+    <Content Include="Concepts\images\H_loopCenter.png" />
+    <Content Include="Concepts\images\H_loopOnAxis.png" />
+    <Content Include="Models\comsol\help\1\Azimuthal Induction Currents, Vector Potential.html" />
+    <Content Include="Models\comsol\help\1\Azimuthal Induction Currents, Vector Potential_rep\Comsol_model_report.png" />
+    <Content Include="Models\comsol\help\1\Azimuthal Induction Currents, Vector Potential_rep\geometry_section0.png" />
+    <Content Include="Models\comsol\help\1\Azimuthal Induction Currents, Vector Potential_rep\geometry_section0_0_img.png" />
+    <Content Include="Models\comsol\help\1\Azimuthal Induction Currents, Vector Potential_rep\geometry_section0_1_img.png" />
+    <Content Include="Models\comsol\help\1\Azimuthal Induction Currents, Vector Potential_rep\geometry_section0_2_img.png" />
+    <Content Include="Models\comsol\help\1\Azimuthal Induction Currents, Vector Potential_rep\mesh_section_0_0.png" />
+    <Content Include="Models\comsol\help\1\Azimuthal Induction Currents, Vector Potential_rep\POST.PNG" />
+    <Content Include="Models\comsol\help\1\Azimuthal Induction Currents, Vector Potential_rep\POST_0.PNG" />
+    <Content Include="Models\comsol\help\1\EXPORT1.TIF" />
+    <Content Include="Models\comsol\help\6\Figure 1.png" />
+    <Content Include="Models\comsol\images\snap[29].png" />
+    <Content Include="Models\comsol\images\snap[30].png" />
+    <Content Include="Models\comsol\images\snap[31].png" />
+    <Content Include="Models\comsol\images\snap[32].png" />
+    <Content Include="Models\images\A--Single loop to single loop comsol.png" />
+    <Content Include="Models\images\A--Single loop to single loop.png" />
+    <Content Include="Models\images\accretionDistance.png" />
+    <Content Include="Models\images\accretionSameAsTelfor.png" />
+    <Content Include="Models\images\B--Coupled p-s to coupled p-s.png" />
+    <Content Include="Models\images\C--Single loop energized solenoid.png" />
+    <Content Include="Models\images\Coupled p-s to coupled p-s.png" />
+    <Content Include="Models\images\D--Single loop energized solenoid to solenoid under load.png" />
+    <Content Include="Models\images\depiction of field emissions.png" />
+    <Content Include="Models\images\E--Single loop with disk to single loop real.png" />
+    <Content Include="Models\images\E--Single loop with disk to single loop.png" />
+    <Content Include="Models\images\F--Single loop with accretion disc to single loop with accretion disc.png" />
+    <Content Include="Models\images\Single loop energized solenoid to solenoid under load.png" />
+    <Content Include="Models\images\Single loop energized solenoid.png" />
+    <Content Include="Models\images\Single loop to single loop.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
