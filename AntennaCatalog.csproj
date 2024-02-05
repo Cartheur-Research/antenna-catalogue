@@ -104,7 +104,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CircuitCalculator\CircuitCalculator.csproj">
+    <ProjectReference Include="..\circuit-calculator\CircuitCalculator.csproj">
       <Project>{435EFB62-470B-4BF4-8448-1A347A4D7C5B}</Project>
       <Name>CircuitCalculator</Name>
     </ProjectReference>
